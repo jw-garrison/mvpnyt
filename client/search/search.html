@@ -1,0 +1,26 @@
+<div id='container'>
+  <h2>Search for a journalist</h2>
+</div>
+
+<div>
+  <form name='searchJournalist' ng-submit="search()">
+    <input name='journalist' ng-model="query" type="text"/>
+    <button type="submit" value="Search">
+      Search archive
+    </button>
+  </form>
+
+  <div>
+    <div ng-repeat="article in data.articles">
+      <a href="{{article.web_url}}">
+        <div>
+          <h3>{{ article.headline.main }}</h3>
+          <img ng-src="http://www.nytimes.com/{{article.multimedia[1].url}}"/>
+          <p>
+            {{article.lead_paragraph}}
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

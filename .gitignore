@@ -9,3 +9,4 @@ npm-debug.log
 ### Bower ###
 
 ## API keys
+server/config/api.js
