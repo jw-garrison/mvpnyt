@@ -3,7 +3,12 @@
     <form name='searchJournalist' ng-submit="search()" class="form-group">
       <label for="searchbar">Search for a journalist</label>
       <div class="input-group">
-        <input name='journalist' ng-model="query" type="text" class="form-control" placeholder="Maggie Haberman"/>
+        <input
+          name='journalist'
+          ng-model="query"
+          type="text"
+          class="form-control"
+          placeholder="Eg.) Maggie Haberman, Sam Sifton, Farhad Manjoo"/>
         <span class="input-group-btn">
           <button class="btn btn-default" type="submit">Search archive</button>
         </span>
@@ -11,7 +16,7 @@
     </form>
   </div><!-- /.col-lg-6 -->
 <div>
-  
+
 </div>
   <div>
     <div ng-repeat="article in data.articles">
