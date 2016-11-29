@@ -1,5 +1,4 @@
 var request = require('request');
-console.log(process.env.API_KEY);
 var key = process.env.API_KEY || require('../config/api').API_KEY;
 
 exports.searchNYT = function (req, res) {
@@ -12,6 +11,7 @@ exports.searchNYT = function (req, res) {
       'fl': "web_url,byline,snippet,multimedia,headline,lead_paragraph"
     },
   }, function(err, response, body) {
+    console.log(body);
     body = JSON.parse(body);
     res.send(body.response.docs);
   });
