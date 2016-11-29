@@ -12,8 +12,8 @@ exports.searchNYT = function (req, res) {
       'fl': "web_url,byline,snippet,multimedia,headline,lead_paragraph"
     },
   }, function(err, response, body) {
-    console.log('++++++++body:' body);
-    console.log('++++++++body.response:' body.response);
+    console.log('++++++++body:', body);
+    console.log('++++++++body.response:', body.response);
     body = JSON.parse(body);
     res.send(body.response.docs);
   });
