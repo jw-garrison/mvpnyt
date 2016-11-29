@@ -4,7 +4,7 @@
   "description": "my nyt search app",
   "scripts": {
     "babel": "babel . --out-dir compiled --presets=es2015 --ignore=node_modules, compiled --watch",
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js"
   },
   "author": "JW Garrison",
   "license": "MIT",
