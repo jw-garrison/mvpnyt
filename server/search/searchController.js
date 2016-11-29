@@ -1,4 +1,5 @@
 var request = require('request');
+console.log(process.env.API_KEY);
 var key = process.env.API_KEY || require('../config/api').API_KEY;
 
 exports.searchNYT = function (req, res) {
