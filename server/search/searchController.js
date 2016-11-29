@@ -1,5 +1,5 @@
 var request = require('request');
-var key = require('../config/api').API_KEY;
+var key = process.env.API_KEY || require('../config/api').API_KEY;
 
 exports.searchNYT = function (req, res) {
   var q = '"' + req.body.q + '"';
