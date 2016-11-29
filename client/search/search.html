@@ -15,15 +15,22 @@
       </div><!-- /input-group -->
     </form>
   </div><!-- /.col-lg-6 -->
-<div>
 
-</div>
+  <div class="col-md-8 col-md-offset-2">
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous" ng-click="older()")><span aria-hidden="true">&larr; Older</span></li>
+        <li class="next" ng-click="newer()"><span aria-hidden="true">Newer &rarr;</span></li>
+      </ul>
+    </nav>
+  </div>
+
   <div>
     <div ng-repeat="article in data.articles">
       <a href="{{article.web_url}}" target="_blank">
-        <div class="col-md-6">
+        <div class="col-md-6 clearfix">
           <h4 class="text-uppercase text-center"><strong>{{ article.headline.main }}</strong></h4>
-          <img ng-src="http://www.nytimes.com/{{article.multimedia[1].url}}" class="img-responsive center-block"/>
+          <img ng-src="http://www.nytimes.com/{{article.multimedia[1].url}}" class="img-responsive center-block img-rounded"/>
           <br />
           <div class="col-md-10 col-md-offset-1">
             <p>{{article.lead_paragraph}}</p>
@@ -32,4 +39,14 @@
       </a>
     </div>
   </div>
-</div>
+
+  <div class="col-md-8 col-md-offset-2">
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous" ng-click="older()")><span aria-hidden="true">&larr; Older</span></li>
+        <li class="next" ng-click="newer()"><span aria-hidden="true">Newer &rarr;</span></li>
+      </ul>
+    </nav>
+  </div>
+
+<div>
