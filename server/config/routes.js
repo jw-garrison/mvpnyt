@@ -1,4 +1,4 @@
-const SearchController = require('../search/SearchController').searchNYT;
+var SearchController = require('../search/searchController').searchNYT;
 const helpers = require('./helpers');
 
 exports.routes = function (app, express) {
