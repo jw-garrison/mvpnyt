@@ -10,15 +10,20 @@ angular.module('mvp.search', [])
   };
 
   $scope.older = function () {
-    $scope.data.page--;
+    if ($scope.data.page <= 0) {
+      $scope.data.page = 0;
+    } else {
+      $scope.data.page--;
+    }
+
+    console.log($scope.data.page);
     $scope.search();
   };
 
   $scope.search = function () {
-    console.log($scope.query);
     Search.searchArchive($scope.query, $scope.data.page)
       .then(function(articles) {
         $scope.data.articles = articles;
-      });
+      })
   };
 });
