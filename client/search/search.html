@@ -1,24 +1,28 @@
-<div id='container'>
-  <h2>Search for a journalist</h2>
-</div>
-
 <div>
-  <form name='searchJournalist' ng-submit="search()">
-    <input name='journalist' ng-model="query" type="text"/>
-    <button type="submit" value="Search">
-      Search archive
-    </button>
-  </form>
-
+  <div class="col-md-8 col-md-offset-2">
+    <form name='searchJournalist' ng-submit="search()" class="form-group">
+      <label for="searchbar">Search for a journalist</label>
+      <div class="input-group">
+        <input name='journalist' ng-model="query" type="text" class="form-control" placeholder="Maggie Haberman"/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Search archive</button>
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </div><!-- /.col-lg-6 -->
+<div>
+  
+</div>
   <div>
     <div ng-repeat="article in data.articles">
-      <a href="{{article.web_url}}">
-        <div>
-          <h3>{{ article.headline.main }}</h3>
-          <img ng-src="http://www.nytimes.com/{{article.multimedia[1].url}}"/>
-          <p>
-            {{article.lead_paragraph}}
-          </p>
+      <a href="{{article.web_url}}" target="_blank">
+        <div class="col-md-6">
+          <h4 class="text-uppercase text-center"><strong>{{ article.headline.main }}</strong></h4>
+          <img ng-src="http://www.nytimes.com/{{article.multimedia[1].url}}" class="img-responsive center-block"/>
+          <br />
+          <div class="col-md-10 col-md-offset-1">
+            <p>{{article.lead_paragraph}}</p>
+          </div>
         </div>
       </a>
     </div>
